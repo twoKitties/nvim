@@ -1,0 +1,25 @@
+# compiled files
+*.log
+*.tmp
+
+# session / swap
+*.swp
+*.swo
+*~
+
+# plugin managers
+lazy-lock.json
+
+# LSP cache
+mason/
+mason-registry/
+
+# treesitter binaries
+parser/
+
+# undo/history
+undo/
+
+# OS junk
+.DS_Store
+Thumbs.db

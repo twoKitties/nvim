@@ -1,0 +1,6 @@
+require("kitties.remap")
+require("kitties.lazy")
+require("kitties.hello")
+require("kitties.clipboard")
+require("kitties.numbers")
+require("kitties.diagnostics")
