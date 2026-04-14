@@ -1,0 +1,17 @@
+-- lua/kitties/plugins/git.lua
+return {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+        on_attach = function(bufnr)
+            local gs = require("gitsigns")
+            local map = function(mode, l, r, desc)
+                vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+            end
+            map("n", "]h", gs.next_hunk, "Next hunk")
+            map("n", "[h", gs.prev_hunk, "Prev hunk")
+            map("n", "<leader>hp", gs.preview_hunk, "Preview hunk")
+            map("n", "<leader>hb", gs.blame_line, "Blame line")
+        end,
+    },
+}
