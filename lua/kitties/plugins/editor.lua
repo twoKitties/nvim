@@ -1,4 +1,5 @@
 -- lua/kitties/plugins/editor.lua
+local platform = require("kitties.platform")
 return {
     {
         "nvim-telescope/telescope.nvim",
@@ -7,7 +8,7 @@ return {
             "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                build = (vim.fn.has("win32") == 1)
+                build = platform.is_windows
                     and "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install"
                     or "make",
             },
