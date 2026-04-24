@@ -44,4 +44,17 @@ return {
             { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File explorer" },
         },
     },
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+    },
+    keys = {
+        {
+            "<leader>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Buffer Local Keymaps (which-key)",
+        },
+    },
 }
