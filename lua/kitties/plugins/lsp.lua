@@ -58,6 +58,12 @@ return {
                             -- root_dir = ... ,  -- auto-finds .sln
                         })
                     end,
+                    cpp = function()
+                        require("lspconfig").clangd.setup({
+                            cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=never" },
+                        })
+                    end,
+
                 },
             })
         end,
